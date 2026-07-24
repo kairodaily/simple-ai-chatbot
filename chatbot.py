@@ -6,18 +6,17 @@ def chat(prompt):
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "You are a helpful AI assistant."},
+            {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
         ]
     )
     return response.choices[0].message.content
 
-print("Simple AI Chatbot started! Type 'exit' to quit.\n")
+print("AI Chatbot started! Type exit to quit")
 
 while True:
-    user_input = input("You: ")
-    if user_input.lower() in ["exit", "quit", "bye"]:
+    user = input("You: ")
+    if user.lower() == "exit":
         print("AI: Goodbye!")
         break
-    reply = chat(user_input)
-    print("AI:", reply)
+    print("AI:", chat(user))
