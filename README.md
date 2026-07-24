@@ -15,7 +15,6 @@ A beginner-friendly AI chatbot built with Python.
 
 ## chatbot.py Code
 
-```python
 from openai import OpenAI
 
 client = OpenAI(api_key="YOUR_API_KEY_HERE")
